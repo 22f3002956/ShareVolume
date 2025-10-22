@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ShareVolume</title>
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+      color: white;
+      text-align: center;
+      padding: 60px;
+    }
+    h1 {
+      font-size: 3em;
+      margin-bottom: 20px;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 20px;
+      margin: 10px;
+      display: inline-block;
+      width: 250px;
+      color: white;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+  </style>
+</head>
+<body>
+  <h1>Atul Raghav</h1>
+  <p>Your assigned company: Apollo Global Management (APO), CIK 0001858681.
+
+Fetch https://data.sec.gov/api/xbrl/companyconcept/CIK0001858681/dei/EntityCommonStockSharesOutstanding.json (set a descriptive User-Agent per SEC guidance).
+Read `.entityName`. Filter `.units.shares[]` for entries whose `fy` > "2020" and
+includes a numeric `val`.
+Save `data.json` with this structure:
+`{"entityName": "Apollo Global Management", "max": {"val": ..., "fy": ...}, "min": {"val": ..., "fy": ...}}`
+where `max` and `min` refer to the highest and lowest `.val`. Break ties however you like.
+
+Render a visually appealing `index.html` where:
+- `<title>` and `<h1>` must include the live `entityName`.
+- The max/min figures are clearly marked with these IDs:
+  `share-entity-name`,
+  `share-max-value`, `share-max-fy`,
+  `share-min-value`, `share-min-fy`.
+
+If the page is opened as `index.html?CIK=0001018724` (or any other 10-digit CIK),
+`fetch()` from the SEC endpoint for that CIK using any proxy, e.g. AIPipe,
+replace every ID listed above and the title and H1 without reloading the page.
+
+Also commit the attachment uid.txt as-is.</p>
+  <div class="card">🚀 Project 1</div>
+  <div class="card">🧠 Project 2</div>
+  <div class="card">💻 Project 3</div>
+</body>
+</html>
